@@ -1,7 +1,7 @@
 #include <stdio.h>
-aglaafaf
 void rotCiphE(void);
 void rotCiphD(void);
+void subCiphE(void);
 main()
 {
     int taskNum;
@@ -15,6 +15,7 @@ main()
         rotCiphD();
         break;
       case 3: printf("You chose task 3\n");
+        subCiphE();
         break;
       case 4: printf("You chose task 4\n");
         break;
@@ -65,6 +66,7 @@ void rotCiphE(void)
                 index++;
             }
     }
+
 void rotCiphD(void)
     {
         char string[] = "BUUBDL BU TVOSJTF"; //limiting string length of type char to 1000 characters
@@ -85,7 +87,7 @@ void rotCiphD(void)
             
                 if (string[index] < 65 || (string[index] > 90 && string[index] < 97))
                     {
-                        printf("%c", string[index], string[index]);
+                        printf("%c", string[index]);
                     }
                 else
                     {
@@ -104,8 +106,50 @@ void rotCiphD(void)
                             {
                                 string[index] = string[index] + 26;
                             }
-                        printf("%c", string[index], string[index]);
+                        printf("%c", string[index]);
                 }
             index++;
         }
     }
+void subCiphE(void)
+    {
+                char alph[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                char sub[] =  "QWERTYUIOPASDFGHJKLZXCVBNM";
+                int index = 0;
+    
+                char message[] = "PLEASE get milk AT THE SHOPS";
+                int stringLength;
+                int indexm = 0;
+                scanf("%[^\n]s", message); //continues to scan characters until a newline character is reached
+                while (message[indexm] != 0) // adds to length of string until null is reached
+                    {
+                        stringLength = indexm + 1;
+                        indexm++;
+                    }
+                indexm = 0;
+    
+                for (indexm = 0; indexm < stringLength; indexm++)
+                    {
+                      if (message[indexm] < 65 || (message[indexm] > 90 && message[indexm] < 97))
+                        {
+                            printf("%c", message[indexm]);
+                        }
+    
+                      else 
+                        {
+                            if (message[indexm] >= 97 && message[indexm] <= 122)
+                                        {
+                                            message[indexm] = message[indexm] - 32;
+                                        }
+                            for (index = 0; index < 26; index++)
+                                {
+                                    if (message[indexm] == alph[index])
+                                        {
+                                           printf("%c", sub[index]);
+                                        }   
+                                }
+                         }
+            
+                    }
+            
+    }  
