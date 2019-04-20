@@ -2,6 +2,7 @@
 void rotCiphE(void);
 void rotCiphD(void);
 void subCiphE(void);
+void subCiphD(void);
 main()
 {
     int taskNum;
@@ -18,6 +19,7 @@ main()
         subCiphE();
         break;
       case 4: printf("You chose task 4\n");
+        subCiphD();
         break;
       default: printf ("You did not enter a valid integer for a task");
     }
@@ -152,4 +154,47 @@ void subCiphE(void)
             
                     }
             
-    }  
+    } 
+
+void subCiphD(void)
+    {
+        char alph[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                char sub[] =  "QWERTYUIOPASDFGHJKLZXCVBNM";
+                int index = 0;
+    
+                char message[] = "HSTQLT utz DOSA QZ ZIT LIGHL";
+                int stringLength;
+                int indexm = 0;
+                scanf("%[^\n]s", message); //continues to scan characters until a newline character is reached
+                while (message[indexm] != 0) // adds to length of string until null is reached
+                    {
+                        stringLength = indexm + 1;
+                        indexm++;
+                    }
+                indexm = 0;
+    
+                for (indexm = 0; indexm < stringLength; indexm++)
+                    {
+                      if (message[indexm] < 65 || (message[indexm] > 90 && message[indexm] < 97))
+                        {
+                            printf("%c", message[indexm]);
+                        }
+    
+                      else 
+                        {
+                            if (message[indexm] >= 97 && message[indexm] <= 122)
+                                        {
+                                            message[indexm] = message[indexm] - 32;
+                                        }
+                            for (index = 0; index < 26; index++)
+                                {
+                                    if (message[indexm] == sub[index])
+                                        {
+                                           printf("%c", alph[index]);
+                                        }   
+                                }
+                         }
+            
+                    }
+
+    }
