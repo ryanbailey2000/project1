@@ -1,4 +1,5 @@
 #include <stdio.h>
+agla
 void rotCiphE(void);
 void rotCiphD(void);
 main()
