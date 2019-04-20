@@ -21,7 +21,7 @@ main()
     }
       
 }
-
+// Rotation Cipher Encryption Function
 void rotCiphE(void)
     {
         char string[] = "ATTACK AT SUNRISE"; //limiting string length of type char to 1000 characters
