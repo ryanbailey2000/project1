@@ -6,32 +6,39 @@ void subCiphD(void);
 main()
 {
     int taskNum;
-    printf("Please enter an integer for task choice and press enter key (i.e. type '1' for Task 1)\n");
-    scanf("%d", &taskNum);
-    switch (taskNum)
-    { case 1: printf("You chose task 1\n");
-        rotCiphE();
-        break;
-      case 2: printf("You chose task 2\n");
-        rotCiphD();
-        break;
-      case 3: printf("You chose task 3\n");
-        subCiphE();
-        break;
-      case 4: printf("You chose task 4\n");
-        subCiphD();
-        break;
-      default: printf ("You did not enter a valid integer for a task");
-    }
+    do
+        {
+             printf("Please enter an integer for task choice and press enter key (i.e. type '1' for Task 1).\nIf you want to exit the program Please enter '0'\n");
+                scanf("%d", &taskNum);
+                switch (taskNum)
+                    { case 1: printf("You chose task 1\n");
+                        rotCiphE();
+                        break;
+                      case 2: printf("You chose task 2\n");
+                        rotCiphD();
+                        break;
+                      case 3: printf("You chose task 3\n");
+                        subCiphE();
+                        break;
+                      case 4: printf("You chose task 4\n");
+                        subCiphD();
+                        break;
+                      default: printf("The integer entered was either not valid or you exited the program");
+                        break;
+                    }
+        } while(taskNum != 0);
+
+
       
 }
 // Rotation Cipher Encryption Function
 void rotCiphE(void)
     {
-        char string[] = "ATTACK AT SUNRISE"; //limiting string length of type char to 1000 characters
+        char string[1000]; //limiting string length of type char to 1000 characters
         int index = 0;
-        int key = 1;
-        int stringLength;
+        int key;
+        int stringLength = 0;
+        printf("Please type the Message you would like to encrypt: \n");
         scanf("%[^\n]s", string); //continues to scan characters until a newline character is reached
         while (string[index] != 0) // adds to length of string until null is reached
             {
@@ -39,6 +46,8 @@ void rotCiphE(void)
                 index++;
             }
         index = 0; //re-initialising index variable to 0 so encryption can be performed on all string indexex
+        printf("Please type your rotation cipher key to encrypt the message: \n");
+        scanf("%d", &key);
         while (index < stringLength)
             { 
             
@@ -73,7 +82,7 @@ void rotCiphD(void)
     {
         char string[] = "BUUBDL BU TVOSJTF"; //limiting string length of type char to 1000 characters
         int index = 0;
-        int key = 1;
+        int key;
         int stringLength;
 
         scanf("%[^\n]s", string); //continues to scan characters until a newline character is reached
