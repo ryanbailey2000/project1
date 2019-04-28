@@ -1,5 +1,14 @@
-/* This program performs the encryption and decryption of a message using the substitution cipher and rotation cipher.
-The  
+/* This program performs the encryption and decryption of a message using the substitution cipher and rotation cipher. The 
+rotation cipher involves shifting the message letter through the alphabet a certain number of times (this is the key). The
+substitution cipher involves substituting the message letter with a new letter. Once this letter is used it cannot be used as
+a substitute for a different letter. This program implements four different types of tasks:
+1. Encryption of a message with a rotation cipher given the message text and rotation amount
+2. Decryption of a message encrypted with a rotation cipher given cipher text and rotation amount 
+3. Encryption of a message with a substitution cipher given message text and alphabet substitution 
+4. Decryption of a message encrypted with a substitution cipher given cipher text and substitutions
+The choice of encryption and decryption and with what type of cipher is up to the user's descretion. The user is able to enter
+what type of message they would like to encrypt and with what key for the rotation cipher. The user is also able to hard code what
+substitution alphabet they would like to employ for the substitution cipher encryption and decryption.  
 */
 
 
