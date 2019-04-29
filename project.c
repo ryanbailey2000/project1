@@ -40,7 +40,7 @@ main()
         
         scanf("%d", &taskNum); //stores number entered by user which will determine following switchcase operation.
         switch (taskNum)
-        {
+        {//the case that runs relies on the number user inputs. (i.e. '1' runs case 1).
           case 1: printf("You chose task 1\n");
             rotCiphE(); //calling function that represents Task 1. 
             break; // all break statements exit the switch case
